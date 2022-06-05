@@ -42,6 +42,7 @@ class FirstPage extends StatelessWidget {
               ElevatedButton(
                 child: const Text("홈으로 이동"),
                 onPressed: () {
+                  // 이전 스택을 모두 비우고 Home 으로 이동
                   // Navigator.of(context).pushAndRemoveUntil(
                   //     MaterialPageRoute(
                   //         builder: (BuildContext context) => const Home()),

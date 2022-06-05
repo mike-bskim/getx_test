@@ -19,6 +19,7 @@ class ThirdPage extends StatelessWidget {
               ElevatedButton(
                 child: const Text("홈으로 이동"),
                 onPressed: () {
+                  // 이전 스택을 유지한체로 Home 으로 이동, "라우트 관리 홈" 의 appBar 에서 돌아가기 버튼이 보이는걸 알수 있다
                   Get.to(const Home());
                 },
               ),
@@ -31,11 +32,12 @@ class ThirdPage extends StatelessWidget {
               ElevatedButton(
                 child: const Text("홈으로 돌아가기"),
                 onPressed: () {
+                  // 이전 스택을 모두 비우고 Home 으로 이동
                   // Navigator.of(context).pushAndRemoveUntil(
                   //     MaterialPageRoute(
                   //         builder: (BuildContext context) => const Home()),
                   //     (route) => false);
-                  Get.offAll(Home());
+                  Get.offAll(const Home());
                 },
               ),
             ],

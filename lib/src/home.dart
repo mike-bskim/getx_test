@@ -76,9 +76,9 @@ class Home extends StatelessWidget {
   }
 }
 
-class User {
-  String name;
-  double age;
-
-  User({required this.name, required this.age});
-}
+// class User {
+//   String name;
+//   double age;
+//
+//   User({required this.name, required this.age});
+// }

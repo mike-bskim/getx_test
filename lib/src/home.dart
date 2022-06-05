@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'pages/normal/first.dart';
-// import 'pages/dependencys/dependency_manage_page.dart';
-// import 'pages/next_page.dart';
-// import 'pages/reactive_state_manage_page.dart';
-// import 'pages/simple_state_manage_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -28,13 +24,13 @@ class Home extends StatelessWidget {
                 Get.to(() => const FirstPage());
               },
             ),
-            // ElevatedButton(
-            //   child: const Text("named 페이지 라우팅"),
-            //   onPressed: () {
-            //     Navigator.of(context).pushNamed("/first-name");
-            //     // Get.toNamed("first-name");
-            //   },
-            // ),
+            ElevatedButton(
+              child: const Text("named 페이지 라우팅"),
+              onPressed: () {
+                // Navigator.of(context).pushNamed("/first-named");
+                Get.toNamed("first-named");
+              },
+            ),
             // ElevatedButton(
             //   child: const Text("라우트에 데이터 보내기 : 개남"),
             //   onPressed: () {

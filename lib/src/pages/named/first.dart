@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:sample_getx/src/home.dart';
 
 class FirstNamedPage extends StatelessWidget {
   const FirstNamedPage({Key? key}) : super(key: key);
@@ -9,7 +8,8 @@ class FirstNamedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("첫번째 페이지"),
+          automaticallyImplyLeading: false,
+          title: const Text("(Named) 첫번째 페이지"),
         ),
         body: Center(
           child: Column(
@@ -18,8 +18,8 @@ class FirstNamedPage extends StatelessWidget {
               ElevatedButton(
                 child: const Text("다음 페이지 이동"),
                 onPressed: () {
-                  // Navigator.of(context).pushNamed("/second-name");
-                  Get.toNamed("second-name");
+                  // Navigator.of(context).pushNamed("/second-named");
+                  Get.toNamed("second-named");
                 },
               ),
               ElevatedButton(

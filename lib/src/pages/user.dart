@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../home.dart';
 // import 'package:sample_getx/src/home.dart';
-// import 'package:sample_getx/src/page/normal/second.dart';
+// import 'package:sample_getx/src/pages/normal/second.dart';
 
 class UserInfoPage extends StatelessWidget {
   const UserInfoPage({Key? key}) : super(key: key);

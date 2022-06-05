@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/dependency_controller.dart';
-// import '../../page/dependencys/get_create.dart';
-import '../../page/dependencys/get_lazyput.dart';
-import '../../page/dependencys/get_put.dart';
-import '../../page/dependencys/get_putasync.dart';
+// import '../../pages/dependencys/get_create.dart';
+import '../../pages/dependencys/get_lazyput.dart';
+import '../../pages/dependencys/get_put.dart';
+import '../../pages/dependencys/get_putasync.dart';
 
 class DependencyManagePage extends StatelessWidget {
   const DependencyManagePage({Key? key}) : super(key: key);

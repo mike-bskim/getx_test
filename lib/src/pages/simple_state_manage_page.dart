@@ -6,8 +6,8 @@ import '../controller/simple_state_controller.dart';
 import 'simple_state_manage/with_getx.dart';
 import 'simple_state_manage/with_providar.dart';
 // import 'package:sample_getx/src/controller/simple_state_controller.dart';
-// import 'package:sample_getx/src/page/simple_state_manage/with_getx.dart';
-// import 'package:sample_getx/src/page/simple_state_manage/with_providar.dart';
+// import 'package:sample_getx/src/pages/simple_state_manage/with_getx.dart';
+// import 'package:sample_getx/src/pages/simple_state_manage/with_providar.dart';
 
 class SimpleStateManagePage extends StatelessWidget {
   const SimpleStateManagePage({Key? key}) : super(key: key);

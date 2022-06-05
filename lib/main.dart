@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'src/home.dart';
-import 'src/page/named/first.dart';
-import 'src/page/named/second.dart';
-// import 'src/page/normal/first.dart';
-// import 'src/page/normal/second.dart';
-// import 'src/page/normal/third.dart';
-import 'src/page/user.dart';
+// import 'src/pages/named/first.dart';
+// import 'src/pages/named/second.dart';
+// import 'src/pages/normal/first.dart';
+// import 'src/pages/normal/second.dart';
+// import 'src/pages/normal/third.dart';
+// import 'src/pages/user.dart';
 
 void main() => runApp(const MyApp());
 
@@ -21,18 +21,19 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      getPages: [
-        GetPage(name: '/', page: () => const Home()),
-        GetPage(
-            name: '/first-name',
-            page: () => const FirstNamedPage(),
-            transition: Transition.fadeIn),
-        GetPage(
-            name: '/second-name',
-            page: () => const SecondNamedPage(),
-            transition: Transition.fadeIn),
-        GetPage(name: '/user/:uid', page: () => const UserInfoPage()),
-      ],
+      home: const Home(),
+      // getPages: [
+      //   GetPage(name: '/', pages: () => const Home()),
+      //   GetPage(
+      //       name: '/first-name',
+      //       pages: () => const FirstNamedPage(),
+      //       transition: Transition.fadeIn),
+      //   GetPage(
+      //       name: '/second-name',
+      //       pages: () => const SecondNamedPage(),
+      //       transition: Transition.fadeIn),
+      //   GetPage(name: '/user/:uid', pages: () => const UserInfoPage()),
+      // ],
     );
   }
 }

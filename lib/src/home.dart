@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'pages/argument_page.dart';
 import 'pages/normal/first.dart';
 
 class Home extends StatelessWidget {
@@ -31,20 +32,23 @@ class Home extends StatelessWidget {
                 Get.toNamed("first-named");
               },
             ),
-            // ElevatedButton(
-            //   child: const Text("라우트에 데이터 보내기 : 개남"),
-            //   onPressed: () {
-            //     Get.to(const NextPage(), arguments: "개남");
-            //     // Get.to(NextPage(), arguments: 5);
-            //     // Get.to(NextPage(), arguments: {"name": "개남", "age": 22});
-            //     // Get.to(NextPage(), arguments: User(name: "개남", age: 22));
-            //     // Get.toNamed("/next", arguments: "개남");
-            //   },
-            // ),
+            ElevatedButton(
+              child: const Text("라우트에 데이터 보내기 : Flutter"),
+              onPressed: () {
+                // 문자열, 숫자 전달 가능
+                // Get.to(const ArgumentPage(), arguments: "Flutter");
+                // Get.to(() => const ArgumentPage(), arguments: 5);
+                // map 타입 전달
+                // Get.to(() => const ArgumentPage(), arguments: {"name": "Flutter", "age": 22});
+                // 클래스 객체도 전달가능
+                Get.to(() => const ArgumentPage(), arguments: User(name: "Flutter", age: 3.0));
+                // Get.toNamed("/argument", arguments: "Flutter");
+              },
+            ),
             // ElevatedButton(
             //   child: const Text("동적링크 전송"),
             //   onPressed: () {
-            //     Get.toNamed("/user/1424?name=개남&age=22");
+            //     Get.toNamed("/user/1424?name=Flutter&age=22");
             //   },
             // ),
             // ElevatedButton(
@@ -72,9 +76,9 @@ class Home extends StatelessWidget {
   }
 }
 
-// class User {
-//   String name;
-//   double age;
-//
-//   User({required this.name, required this.age});
-// }
+class User {
+  final String name;
+  final double age;
+
+  User({required this.name, required this.age});
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'src/home.dart';
+import 'src/pages/argument_page.dart';
 import 'src/pages/named/first.dart';
 import 'src/pages/named/second.dart';
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       //   '/first-named': (context) => const FirstNamedPage(),
       //   '/second-named': (context) => const SecondNamedPage(),
       // },
+// Get.toNamed 를 사용하는 경우, getPages,GetPage 필요함.
       getPages: [
         GetPage(name: '/', page: () => const Home()),
         GetPage(
@@ -36,7 +38,14 @@ class MyApp extends StatelessWidget {
             name: '/second-named',
             page: () => const SecondNamedPage(),
             transition: Transition.fadeIn),
-        // GetPage(name: '/user/:uid', pages: () => const UserInfoPage()),
+        GetPage(
+            name: '/argument',
+            page: () => const ArgumentPage(),
+            transition: Transition.fadeIn),
+        // GetPage(
+        //     name: '/user/:uid',
+        //     page: () => const UserInfoPage(),
+        //     transition: Transition.fadeIn),
       ],
     );
   }

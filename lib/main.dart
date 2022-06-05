@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'src/home.dart';
-import 'src/argument/argument_page.dart';
+import 'src/pages/argument/argument_page.dart';
 import 'src/pages/named/first.dart';
 import 'src/pages/named/second.dart';
+import 'src/pages/url_parameter/user_info_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -19,14 +20,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-// Navigator.of(context) 를 사용하는 경우, initialRoute,routes 필요함.
-      // home: const Home(),
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => const Home(),
-      //   '/first-named': (context) => const FirstNamedPage(),
-      //   '/second-named': (context) => const SecondNamedPage(),
-      // },
 // Get.toNamed 를 사용하는 경우, getPages,GetPage 필요함.
       getPages: [
         GetPage(name: '/', page: () => const Home()),
@@ -42,10 +35,10 @@ class MyApp extends StatelessWidget {
             name: '/argument',
             page: () => const ArgumentPage(),
             transition: Transition.fadeIn),
-        // GetPage(
-        //     name: '/user/:uid',
-        //     page: () => const UserInfoPage(),
-        //     transition: Transition.fadeIn),
+        GetPage(
+            name: '/user/:uid',
+            page: () => const UserInfoPage(),
+            transition: Transition.fadeIn),
       ],
     );
   }

@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-This is for getx test by kimbs
+This is test for GetX by kimbs, 2022.06.05
 
 ## Getting Started
 

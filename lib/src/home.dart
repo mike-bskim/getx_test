@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'pages/argument/argument_page.dart';
 import 'pages/normal/first.dart';
+import 'pages/simple_state_manage/simple_state_manage_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -59,12 +60,20 @@ class Home extends StatelessWidget {
                 Get.toNamed("/user/1424?name=Flutter&age=22");
               },
             ),
-            // ElevatedButton(
-            //   child: const Text("단순 상태관리"),
-            //   onPressed: () {
-            //     Get.to(const SimpleStateManagePage());
-            //   },
-            // ),
+            const Divider(
+              height: 8,
+              thickness: 1,
+              indent: 16,
+              endIndent: 16,
+              color: Colors.grey,
+            ),
+            ElevatedButton(
+              style: elevatedButtonStyle,
+              child: const Text("단순 상태관리"),
+              onPressed: () {
+                Get.to(() => const SimpleStateManagePage());
+              },
+            ),
             // ElevatedButton(
             //   child: const Text("반응형 상태관리"),
             //   onPressed: () {

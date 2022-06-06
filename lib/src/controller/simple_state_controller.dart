@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class SimpleStateControllerWithGetx extends GetxController {
+class SimpleStateControllerWithGetX extends GetxController {
   int count = 0;
   void increment() {
     count++;
@@ -15,7 +15,7 @@ class SimpleStateControllerWithGetx extends GetxController {
 
   void incrementForId(String id) {
     count++;
-    update([id]);
+    update([id]); // 배열처리향 함.
   }
 }
 

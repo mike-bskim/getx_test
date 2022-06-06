@@ -7,14 +7,14 @@ import '../controller/simple_state_controller.dart';
 // import 'package:sample_getx/src/controller/reactive_state_controller.dart';
 // import 'package:sample_getx/src/controller/simple_state_controller.dart';
 // import 'package:sample_getx/src/pages/simple_state_manage/with_getx.dart';
-// import 'package:sample_getx/src/pages/simple_state_manage/with_providar.dart';
+// import 'package:sample_getx/src/pages/simple_state_manage/with_provider.dart';
 
 class ReactiveStateManagePage extends StatelessWidget {
   const ReactiveStateManagePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Get.put(SimpleStateControllerWithGetx());
+    Get.put(SimpleStateControllerWithGetX());
     Get.put(ReactiveStateController());
 
     return Scaffold(

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SimpleStateControllerWithGetX extends GetxController {
@@ -16,6 +16,11 @@ class SimpleStateControllerWithGetX extends GetxController {
   void incrementForId(String id) {
     count++;
     update([id]); // 배열처리향 함.
+  }
+  @override
+  void onClose() {
+    debugPrint(hashCode.toString());
+    super.onClose();
   }
 }
 

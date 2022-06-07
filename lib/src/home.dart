@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_test/src/pages/binding/binding_page.dart';
 import 'pages/argument/argument_page.dart';
 import 'pages/dependencys/dependency_manage_page.dart';
 import 'pages/normal/first.dart';
@@ -88,13 +87,13 @@ class Home extends StatelessWidget {
                 Get.to(() => const DependencyManagePage());
               },
             ),
-            // ElevatedButton(
-            //   style: elevatedButtonStyle,
-            //   child: const Text("바인딩 관리"),
-            //   onPressed: () {
-            //     Get.toNamed('/binding');
-            //   },
-            // ),
+            ElevatedButton(
+              style: elevatedButtonStyle,
+              child: const Text("바인딩 관리"),
+              onPressed: () {
+                Get.toNamed('/binding');
+              },
+            ),
           ],
         ),
       ),

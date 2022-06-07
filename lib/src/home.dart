@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'pages/argument/argument_page.dart';
 import 'pages/normal/first.dart';
+import 'pages/reactive_state_manage/reactive_state_manage_page.dart';
 import 'pages/simple_state_manage/simple_state_manage_page.dart';
 
 class Home extends StatelessWidget {
@@ -11,6 +12,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     ButtonStyle elevatedButtonStyle =
         ElevatedButton.styleFrom(minimumSize: const Size(280.0, 35.0));
+    Divider divider = const Divider(
+        height: 8, thickness: 1, indent: 16, endIndent: 16, color: Colors.grey);
 
     return Scaffold(
       appBar: AppBar(
@@ -60,13 +63,7 @@ class Home extends StatelessWidget {
                 Get.toNamed("/user/1424?name=Flutter&age=22");
               },
             ),
-            const Divider(
-              height: 8,
-              thickness: 1,
-              indent: 16,
-              endIndent: 16,
-              color: Colors.grey,
-            ),
+            divider,
             ElevatedButton(
               style: elevatedButtonStyle,
               child: const Text("단순 상태관리"),
@@ -74,12 +71,13 @@ class Home extends StatelessWidget {
                 Get.to(() => const SimpleStateManagePage());
               },
             ),
-            // ElevatedButton(
-            //   child: const Text("반응형 상태관리"),
-            //   onPressed: () {
-            //     Get.to(const ReactiveStateManagePage());
-            //   },
-            // ),
+            ElevatedButton(
+              style: elevatedButtonStyle,
+              child: const Text("반응형 상태관리"),
+              onPressed: () {
+                Get.to(() => const ReactiveStateManagePage());
+              },
+            ),
             // ElevatedButton(
             //   child: const Text("종속성 상태관리"),
             //   onPressed: () {

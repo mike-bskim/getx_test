@@ -1,43 +1,29 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/dependency_controller.dart';
 
-class GetLazyPut extends StatefulWidget {
+class GetLazyPut extends StatelessWidget {
   const GetLazyPut({Key? key}) : super(key: key);
 
   @override
-  GetLazyPutState createState() => GetLazyPutState();
-}
-
-class GetLazyPutState extends State<GetLazyPut> {
-  bool ck = false;
-  @override
-  void initState() {
-    super.initState();
-    Timer.periodic(const Duration(seconds: 2), (_) {
-      setState(() {
-        ck = true;
-      });
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    if (ck) {
-      return GetBuilder<DependencyController>(
-        builder: (_) {
-          return Scaffold(
-            appBar: AppBar(),
-          );
-        },
-      );
-    } else {
-      return Scaffold(
-        appBar: AppBar(),
-      );
-    }
+    ButtonStyle elevatedButtonStyle =
+    ElevatedButton.styleFrom(minimumSize: const Size(150.0, 35.0));
+
+    return Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text("Get.lazyPut"),),
+        body: Center(
+          child: ElevatedButton(
+            style: elevatedButtonStyle,
+            child: const Text('Print hashCode'),
+            onPressed: () {
+              debugPrint(Get.find<DependencyController>().hashCode.toString());
+            },
+          ),
+        ),
+    );
   }
 }

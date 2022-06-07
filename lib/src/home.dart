@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_test/src/pages/binding/binding_page.dart';
 import 'pages/argument/argument_page.dart';
+import 'pages/dependencys/dependency_manage_page.dart';
 import 'pages/normal/first.dart';
 import 'pages/reactive_state_manage/reactive_state_manage_page.dart';
 import 'pages/simple_state_manage/simple_state_manage_page.dart';
@@ -78,10 +80,19 @@ class Home extends StatelessWidget {
                 Get.to(() => const ReactiveStateManagePage());
               },
             ),
+            divider,
+            ElevatedButton(
+              style: elevatedButtonStyle,
+              child: const Text("종속성 관리"),
+              onPressed: () {
+                Get.to(() => const DependencyManagePage());
+              },
+            ),
             // ElevatedButton(
-            //   child: const Text("종속성 상태관리"),
+            //   style: elevatedButtonStyle,
+            //   child: const Text("바인딩 관리"),
             //   onPressed: () {
-            //     Get.to(const DependencyManagePage());
+            //     Get.toNamed('/binding');
             //   },
             // ),
           ],

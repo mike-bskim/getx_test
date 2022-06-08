@@ -83,14 +83,14 @@ class Home extends StatelessWidget {
             divider,
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("종속성 예시"),
+              child: const Text("Dependency injection 예시"),
               onPressed: () {
                 Get.to(() => const DependencyManagePage());
               },
             ),
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("바인딩 예시"),
+              child: const Text("Binding 예시"),
               onPressed: () {
                 Get.toNamed('/binding');
               },

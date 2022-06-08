@@ -17,20 +17,24 @@ class ShoppingPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
-          child: Stack(
+          child: Column(
             children: [
               Obx(
                 () => Text(
                   'Total: ${Get.find<ShoppingController>(tag: 'total').total.value}',
-                  style: const TextStyle(fontSize: 20),// total
+                  style: const TextStyle(fontSize: 20), // total
                 ),
               ),
-              ListView.builder(
-                // shrinkWrap: true,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return ShoppingItem();
-                },
+              Expanded(
+                child: ListView.builder(
+                  // shrinkWrap: true,
+                  itemCount: 20,
+                  itemBuilder: (context, index) {
+                    return ShoppingItem(
+                      item: 'Item No. ${(index+1).toString()}',
+                    );
+                  },
+                ),
               ),
             ],
           ),

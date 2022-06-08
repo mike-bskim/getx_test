@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import '../../controller/shopping_controller.dart';
 
 class ShoppingItem extends StatelessWidget {
-  ShoppingItem({Key? key}) : super(key: key);
+  final String item;
+  ShoppingItem({Key? key, required this.item}) : super(key: key);
 
   // injected by Get.create
   final ShoppingController controller = Get.find();
@@ -20,6 +21,10 @@ class ShoppingItem extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        SizedBox(
+          width: 100,
+          child: Text(item),
+        ),
         ElevatedButton(
           style: elevatedButtonStyle,
           onPressed: () {

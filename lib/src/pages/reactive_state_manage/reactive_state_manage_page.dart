@@ -52,7 +52,7 @@ class ReactiveStateManagePage extends StatelessWidget {
               child: Text("count 증가", style: textStyle),
               onPressed: () {
                 // Get.find<ReactiveStateController>().increment();
-                reactiveStateCtrl.increment();
+                reactiveStateCtrl.increase();
               },
             ),
             ElevatedButton(

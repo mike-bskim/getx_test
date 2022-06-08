@@ -15,6 +15,8 @@ class DependencyManagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     ButtonStyle elevatedButtonStyle =
         ElevatedButton.styleFrom(minimumSize: const Size(150.0, 35.0));
+    Divider divider = const Divider(
+        height: 16, thickness: 1, indent: 16, endIndent: 16, color: Colors.grey);
 
     return Scaffold(
       appBar: AppBar(
@@ -72,16 +74,24 @@ class DependencyManagePage extends StatelessWidget {
               child: const Text("Get.create"),
               onPressed: () {
                 Get.to(
-                  () => const GetCreate(),
+                      () => const GetCreate(),
                   binding: BindingsBuilder(() {
                     // Get.find 호출시 마다 새로운 인스턴스 생성함
                     // 싱클톤방식이 아니라서 삭제를 수동으로 해줘야 함, 수동삭제는 구현못함
                     Get.create<DependencyController>(
-                        () => DependencyController());
+                            () => DependencyController());
                   }),
                 );
               },
-            )
+            ),
+            divider,
+            ElevatedButton(
+              style: elevatedButtonStyle,
+              child: const Text("Get.create 예시"),
+              onPressed: () {
+
+              },
+            ),
           ],
         ),
       ),

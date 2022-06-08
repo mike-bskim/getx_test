@@ -48,7 +48,7 @@ class WithGetX extends StatelessWidget {
           ElevatedButton(
             child: const Text("+", style: TextStyle(fontSize: 30)),
             onPressed: () {
-              Get.find<SimpleStateControllerWithGetX>().increment();
+              Get.find<SimpleStateControllerWithGetX>().increase();
               // Get.find<SimpleStateControllerWithGetX>().incrementForId("test");
             },
           ),

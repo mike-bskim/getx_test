@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'pages/argument/argument_page.dart';
 import 'pages/dependencys/dependency_manage_page.dart';
+import 'pages/getx_service/getx_service_page.dart';
 import 'pages/normal/first.dart';
 import 'pages/reactive_state_manage/reactive_state_manage_page.dart';
 import 'pages/simple_state_manage/simple_state_manage_page.dart';
@@ -82,16 +83,24 @@ class Home extends StatelessWidget {
             divider,
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("종속성 관리"),
+              child: const Text("종속성 예시"),
               onPressed: () {
                 Get.to(() => const DependencyManagePage());
               },
             ),
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("바인딩 관리"),
+              child: const Text("바인딩 예시"),
               onPressed: () {
                 Get.toNamed('/binding');
+              },
+            ),
+            divider,
+            ElevatedButton(
+              style: elevatedButtonStyle,
+              child: const Text("GetX Service 예시"),
+              onPressed: () {
+                Get.to(()=> const GetXServicePage());
               },
             ),
           ],

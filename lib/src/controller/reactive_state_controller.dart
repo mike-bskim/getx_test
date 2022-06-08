@@ -18,7 +18,7 @@ class ReactiveStateController extends GetxController {
   Rx<User> user = User(name: "Flutter", age: 22).obs;
   RxList<dynamic> d = [].obs;
 
-  void increment() {
+  void increase() {
     count++;
   }
 

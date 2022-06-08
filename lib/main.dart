@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_test/src/binding/binding_injection.dart';
-
 import 'src/controller/dependency_controller.dart';
 import 'src/home.dart';
 import 'src/pages/argument/argument_page.dart';
@@ -10,7 +9,14 @@ import 'src/pages/named/first.dart';
 import 'src/pages/named/second.dart';
 import 'src/pages/url_parameter/user_info_page.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  // initService();
+  runApp(const MyApp());
+}
+
+// void initService(){
+//   Get.put(GetXControllerTest(), permanent: true);
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -26,7 +32,7 @@ class MyApp extends StatelessWidget {
       ),
 // Get.toNamed 를 사용하는 경우, getPages,GetPage 필요함.
       getPages: [
-        GetPage(name: '/', page: () => const Home()),
+        GetPage(name: '/', page: () => const Home()), // Home
         GetPage(
             name: '/first-named',
             page: () => const FirstNamedPage(),

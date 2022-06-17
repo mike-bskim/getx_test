@@ -13,9 +13,12 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ButtonStyle elevatedButtonStyle =
-        ElevatedButton.styleFrom(minimumSize: const Size(280.0, 35.0));
+        ElevatedButton.styleFrom(minimumSize: const Size(330.0, 40.0));
+
     Divider divider = const Divider(
-        height: 8, thickness: 1, indent: 16, endIndent: 16, color: Colors.grey);
+        height: 16, thickness: 1, indent: 16, endIndent: 16, color: Colors.grey);
+
+    TextStyle textStyle = const TextStyle(fontSize: 18);
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +30,7 @@ class Home extends StatelessWidget {
           children: [
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("단순 페이지 라우팅"),
+              child: Text("단순 페이지 라우팅", style: textStyle),
               onPressed: () {
                 // Navigator.of(context).push(MaterialPageRoute(
                 //   builder: (BuildContext context) => const FirstPage(),
@@ -37,7 +40,7 @@ class Home extends StatelessWidget {
             ),
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("named 페이지 라우팅"),
+              child: Text("named 페이지 라우팅", style: textStyle),
               onPressed: () {
                 // Navigator.of(context).pushNamed("/first-named");
                 Get.toNamed("first-named");
@@ -45,7 +48,7 @@ class Home extends StatelessWidget {
             ),
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("Arguments 로 데이터 보내기 : Flutter"),
+              child: Text("Arguments 로 데이터 보내기 : Flutter", style: textStyle),
               onPressed: () {
                 // 문자열, 숫자 전달 가능
                 // Get.to(const ArgumentPage(), arguments: "Flutter");
@@ -60,7 +63,7 @@ class Home extends StatelessWidget {
             ),
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("URL Parameters 로 데이터 보내기"),
+              child: Text("URL Parameters 로 데이터 보내기", style: textStyle),
               onPressed: () {
                 Get.toNamed("/user/1424?name=Flutter&age=22");
               },
@@ -68,14 +71,14 @@ class Home extends StatelessWidget {
             divider,
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("단순 상태관리"),
+              child: Text("단순 상태관리", style: textStyle),
               onPressed: () {
                 Get.to(() => const SimpleStateManagePage());
               },
             ),
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("반응형 상태관리"),
+              child: Text("반응형 상태관리", style: textStyle),
               onPressed: () {
                 Get.to(() => const ReactiveStateManagePage());
               },
@@ -83,14 +86,14 @@ class Home extends StatelessWidget {
             divider,
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("Dependency injection 예시"),
+              child: Text("Dependency injection 예시", style: textStyle),
               onPressed: () {
                 Get.to(() => const DependencyManagePage());
               },
             ),
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("Binding 예시"),
+              child: Text("Binding 예시", style: textStyle),
               onPressed: () {
                 Get.toNamed('/binding');
               },
@@ -98,9 +101,9 @@ class Home extends StatelessWidget {
             divider,
             ElevatedButton(
               style: elevatedButtonStyle,
-              child: const Text("GetX Service 예시"),
+              child: Text("GetX Service 예시", style: textStyle),
               onPressed: () {
-                Get.to(()=> const GetXServicePage());
+                Get.to(() => const GetXServicePage());
               },
             ),
           ],

@@ -6,7 +6,7 @@ import 'cart_get_stateless_controller.dart';
 class CartGetStatelessItemController extends GetxController {
   final quantity = 0.obs;
 
-  static CartGetStatelessItemController get to => Get.find();
+  // static CartGetStatelessItemController get to => Get.find();
 
   void increment() {
     quantity.value++;

@@ -54,26 +54,37 @@ class CartStatelessPage extends GetView<CartGetStatelessController> {
   }
 }
 
-class CartItem extends StatelessWidget {
+class CartItem extends StatefulWidget {
   final String product;
 
   const CartItem({Key? key, required this.product}) : super(key: key);
 
   @override
+  State<CartItem> createState() => _CartItemState();
+}
+
+class _CartItemState extends State<CartItem> {
+  late CartGetStatelessItemController cartGetStatelessItemController;
+
+  @override
+  void initState() {
+    cartGetStatelessItemController = Get.find();
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
-    // CartGetStatelessItemController cartGetStatelessItemController = Get.find();
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Text(
-          product,
+          widget.product,
           style: const TextStyle(fontSize: 18.0),
         ),
         Obx(
               () => Text(
-                'Qty: ${CartGetStatelessItemController.to.quantity.value}',
-                // 'Qty: ${cartGetStatelessItemController.quantity.value}',
+                // 'Qty: ${CartGetStatelessItemController.to.quantity.value}',
+                'Qty: ${cartGetStatelessItemController.quantity.value}',
             style: const TextStyle(fontSize: 18.0),
           ),
         ),
@@ -82,16 +93,16 @@ class CartItem extends StatelessWidget {
             IconButton(
               onPressed: () {
                 debugPrint(
-                    'hashCode: ${CartGetStatelessItemController.to.hashCode}, ${CartGetStatelessItemController.to.quantity}');
-                // 'hashCode: ${cartGetStatelessItemController.hashCode}, ${cartGetStatelessItemController.quantity}');
-                CartGetStatelessItemController.to.increment();
-                // cartGetStatelessItemController.increment();
+                    // 'hashCode: ${CartGetStatelessItemController.to.hashCode}, ${CartGetStatelessItemController.to.quantity}');
+                'hashCode: ${cartGetStatelessItemController.hashCode}, ${cartGetStatelessItemController.quantity}');
+                // CartGetStatelessItemController.to.increment();
+                cartGetStatelessItemController.increment();
               },
               icon: const Icon(Icons.add),
             ),
             IconButton(
-              onPressed: () => CartGetStatelessItemController.to.decrement(),
-              // onPressed: () => cartGetStatelessItemController.decrement(),
+              // onPressed: () => CartGetStatelessItemController.to.decrement(),
+              onPressed: () => cartGetStatelessItemController.decrement(),
               icon: const Icon(Icons.remove),
             ),
           ],
